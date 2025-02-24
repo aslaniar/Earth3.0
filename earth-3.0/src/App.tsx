@@ -16,7 +16,6 @@ function App() {
             {/* Header / Navbar */}
             <header className="navbar">
                 <div className="navbar-left">
-                    {/* Logo could be an <img> tag; here, we’ll just do text. */}
                     <span className="logo">Eath3.0</span>
                 </div>
                 <nav className="navbar-nav">
