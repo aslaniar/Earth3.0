@@ -16,7 +16,7 @@ function App() {
             {/* Header / Navbar */}
             <header className="navbar">
                 <div className="navbar-left">
-                    <span className="logo">Eath3.0</span>
+                    <span className="logo">Earth3.0</span>
                 </div>
                 <nav className="navbar-nav">
                     <ul>
@@ -46,12 +46,12 @@ function App() {
 
             {/* Sections (all on one page) */}
             <section id="home" className="section">
-                <h1>Welcome to Eath3.0</h1>
+                <h1>Welcome to Earth3.0</h1>
                 <p>This is the home section.</p>
             </section>
 
             <section id="gallery" className="section">
-                <h1>Eath3.0 Gallery</h1>
+                <h1>Earth3.0 Gallery</h1>
                 <Gallery/>
             </section>
 
