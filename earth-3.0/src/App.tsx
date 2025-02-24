@@ -1,11 +1,7 @@
 import React from 'react';
-// If using react-scroll:
-// import { Link, Element } from 'react-scroll';
 import './css/App.css';
 
-
 function App() {
-    // Option 1: Using standard anchor links with smooth scrolling
     const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
         event.preventDefault();
         const targetElement = document.getElementById(targetId);
@@ -30,8 +26,8 @@ function App() {
                             </a>
                         </li>
                         <li>
-                            <a href="#about" onClick={(e) => handleNavClick(e, 'about')}>
-                                About
+                            <a href="#gallery" onClick={(e) => handleNavClick(e, 'gallery')}>
+                                Gallery
                             </a>
                         </li>
                         <li>
@@ -54,9 +50,9 @@ function App() {
                 <p>This is the home section.</p>
             </section>
 
-            <section id="about" className="section">
-                <h1>About Eath3.0</h1>
-                <p>Some information about Eath3.0...</p>
+            <section id="gallery" className="section">
+                <h1>Eath3.0 Gallery</h1>
+                <p>Model about Eath3.0...</p>
             </section>
 
             <section id="services" className="section">
