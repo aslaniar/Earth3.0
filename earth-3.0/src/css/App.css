@@ -1,46 +1,76 @@
-#root {
-  /*max-width: 1280px;*/
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-html,
-body {
-  height: 100%;
+/* Basic resets */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-div {
-  height: 100%;
-  width: 100%
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  color: #fdfdfd;
+  background: #1e1e1e;
+  scroll-behavior: smooth; /* If you prefer using CSS-based smooth scrolling */
 }
 
-.section1 {
-  background-color: #535bf2;
+/* Navbar styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  padding: 0.75rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 
-.section2 {
-  background-color: aquamarine;
+.navbar-left {
+  display: flex;
+  align-items: center;
 }
 
-.section3 {
-  background-color: lavender;
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-right: 1rem;
 }
 
-.section4 {
-  background-color: darkslategray;
+.navbar-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
 }
 
-.section5 {
-  background-color: greenyellow;
+.navbar-nav li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: background-color 0.2s ease;
 }
-.section6 {
-  background-color: maroon;
+
+.navbar-nav li a:hover {
+  background-color: #555;
+  border-radius: 4px;
 }
-.section7 {
-  background-color: gray;
+
+/* Section styling */
+.section {
+  min-height: 100vh; /* Full viewport height */
+  padding: 5rem 2rem;
+  /* Ensure sections are spaced away from fixed navbar */
+  margin-top: 4rem;
 }
-.section8 {
-  background-color: blueviolet;
+
+.section h1 {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.section p {
+  max-width: 600px;
+  line-height: 1.6;
 }
