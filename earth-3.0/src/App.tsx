@@ -1,5 +1,6 @@
 import React from 'react';
 import './css/App.css';
+import Gallery from "./Gallery";
 
 function App() {
     const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
@@ -52,7 +53,7 @@ function App() {
 
             <section id="gallery" className="section">
                 <h1>Eath3.0 Gallery</h1>
-                <p>Model about Eath3.0...</p>
+                <Gallery/>
             </section>
 
             <section id="services" className="section">
