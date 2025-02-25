@@ -13,6 +13,47 @@ body {
   scroll-behavior: smooth; /* If you prefer using CSS-based smooth scrolling */
 }
 
+/* ✅ Scrollbar (Vertical Progress Bar) */
+.scrollbar {
+  position: fixed;
+  right: 30px; /* Keep it on the right */
+  top: 9%; /* Move slightly down to ensure visibility */
+  transform: translateY(0); /* No need to shift since we use top */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* ✅ Ensures equal spacing */
+  height: 90vh; /* ✅ Extends across most of the viewport */
+  z-index: 999;
+}
+
+/* ✅ Main vertical line (Fixed height & fully visible) */
+.scrollbar::before {
+  content: "";
+  position: absolute;
+  width: 6px; /* Line thickness */
+  height: 100%; /* Matches the scrollbar container height */
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  top: 0; /* Ensures the line starts at the top */
+}
+
+/* ✅ Scroll indicators (Evenly spaced horizontal lines) */
+.scroll-indicator {
+  width: 30px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+/* ✅ Active section indicator (Make it LARGER) */
+.scroll-indicator.active {
+  width: 60px;
+  height: 8px;
+  background-color: white;
+}
+
 /* Navbar styling */
 .navbar {
   display: flex;

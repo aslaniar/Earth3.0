@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './css/App.css';
 import Gallery from "./Gallery";
 
 function App() {
+    const sections = useMemo(() => ["home", "gallery", "services", "contact"], []);
+    const [activeSection, setActiveSection] = useState("home");  
+
     const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
         event.preventDefault();
         const targetElement = document.getElementById(targetId);
@@ -11,8 +14,38 @@ function App() {
         }
     };
 
+    //Track scroll postion and update with active section
+    useEffect(() => {
+        const handleScroll = () => {
+            let currentSection = "home"; 
+            
+            sections.forEach((id) => {
+                const section = document.getElementById(id); 
+                if (section) { 
+                    const {top, height} = section.getBoundingClientRect(); 
+                    if (top <= window.innerHeight / 2 && top + height > window.innerHeight / 2){ 
+                        currentSection = id;
+                    }
+                }
+            });
+            setActiveSection(currentSection);  
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);      
+    }, [sections]);
+
+
     return (
         <div className="App">
+
+            {/*Scroll Bar*/}
+             <div className="scrollbar"> 
+                {sections.map((id) => ( 
+                    <div key = {id} className = {`scroll-indicator ${activeSection === id ? "active" : ""}`} />
+                ))}
+             </div>
+             
             {/* Header / Navbar */}
             <header className="navbar">
                 <div className="navbar-left">
@@ -20,30 +53,17 @@ function App() {
                 </div>
                 <nav className="navbar-nav">
                     <ul>
-                        <li>
-                            <a href="#home" onClick={(e) => handleNavClick(e, 'home')}>
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#gallery" onClick={(e) => handleNavClick(e, 'gallery')}>
-                                Gallery
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#services" onClick={(e) => handleNavClick(e, 'services')}>
-                                Services
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>
-                                Contact
-                            </a>
-                        </li>
+                        {sections.map((id) => (
+                            <li key={id}>
+                                <a href={`#${id}`} onClick={(e) => handleNavClick(e, id)}>
+                                    {id.charAt(0).toUpperCase() + id.slice(1)}
+                                </a>
+                            </li>
+                        ))}
                     </ul>
-                </nav>
-            </header>
-
+                    </nav>
+                </header>
+                        
             {/* Sections (all on one page) */}
             <section id="home" className="section">
                 <h1>Welcome to Earth3.0</h1>
@@ -56,6 +76,7 @@ function App() {
             </section>
 
             <section id="services" className="section">
+
                 <h1>Our Services</h1>
                 <p>Details about services offered...</p>
             </section>
