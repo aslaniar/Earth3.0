@@ -13,7 +13,7 @@ body {
   scroll-behavior: smooth; /* If you prefer using CSS-based smooth scrolling */
 }
 
-/* ✅ Scrollbar (Vertical Progress Bar) */
+/* Scroll Bar  */
 .scrollbar {
   position: fixed;
   right: 30px; /* Keep it on the right */
@@ -22,12 +22,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; /* ✅ Ensures equal spacing */
-  height: 90vh; /* ✅ Extends across most of the viewport */
+  justify-content: space-between; 
+  height: 90vh; 
   z-index: 999;
 }
 
-/* ✅ Main vertical line (Fixed height & fully visible) */
+/* Vertical Line */
 .scrollbar::before {
   content: "";
   position: absolute;
@@ -38,7 +38,7 @@ body {
   top: 0; /* Ensures the line starts at the top */
 }
 
-/* ✅ Scroll indicators (Evenly spaced horizontal lines) */
+/* Horizontal Lines */
 .scroll-indicator {
   width: 30px;
   height: 6px;
@@ -47,7 +47,7 @@ body {
   border-radius: 3px;
 }
 
-/* ✅ Active section indicator (Make it LARGER) */
+/* Active Section Indicator */
 .scroll-indicator.active {
   width: 60px;
   height: 8px;
