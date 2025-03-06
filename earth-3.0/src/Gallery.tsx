@@ -1,80 +1,72 @@
+import { FC } from 'react';
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, PresentationControls } from "@react-three/drei";
-import { FC } from "react";
 
 interface ModelProps {
+    modelPath: string;
     scale?: number | [number, number, number];
     position?: [number, number, number];
     rotation?: [number, number, number];
 }
 
-const Model: FC<ModelProps> = (props) => {
-    const { scene } = useGLTF("/ocat.glb");
-    return <primitive object={scene} {...props} />;
+const Model: FC<ModelProps> = ({ modelPath, scale = 1, position, rotation }) => {
+    const { scene } = useGLTF(modelPath);
+    return <primitive object={scene} scale={scale} position={position} rotation={rotation} />;
 };
 
-interface GalleryProps {
-    backgroundColor?: string;
-    ambientLightIntensity?: number;
-    directionalLightIntensity?: number;
+interface GalleryItemProps {
+    modelPath: string;
 }
 
-const Gallery: FC<GalleryProps> = ({
-                                       backgroundColor = "#101010",
-                                       ambientLightIntensity = 0.8,
-                                       directionalLightIntensity = 1
-                                   }) => {
+const GalleryItem: FC<GalleryItemProps> = ({ modelPath }) => {
     return (
         <div
             style={{
-                display: "flex",
-                justifyContent: "center",
-                height: "100vh",
+                width: '300px',
+                height: '300px',
+                margin: '1rem',
+                border: '1px solid #ccc',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                backgroundColor: "#101010"
             }}
         >
-            <div style={{ position: "relative", width: "500px", height: "500px" }}>
-                <Canvas
-                    dpr={[1, 2]}
-                    shadows
-                    camera={{ fov: 45 }}
-                    style={{ width: "500px", height: "500px" }}
+            <Canvas camera={{ fov: 45 }}>
+                <ambientLight intensity={0.8} />
+                <directionalLight intensity={1} position={[10, 10, 10]} />
+                <PresentationControls
+                    speed={1.5}
+                    global
+                    zoom={0.5}
+                    polar={[-0.1, Math.PI / 4]}
                 >
-                    <color attach="background" args={[backgroundColor]} />
-                    <ambientLight intensity={ambientLightIntensity} />
-                    <directionalLight
-                        castShadow
-                        position={[10, 10, 10]}
-                        intensity={directionalLightIntensity}
-                        shadow-mapSize-width={1024}
-                        shadow-mapSize-height={1024}
-                    />
-                    <PresentationControls
-                        speed={1.5}
-                        global
-                        zoom={0.5}
-                        polar={[-0.1, Math.PI / 4]}
-                    >
-                        <Model scale={1} />
-                    </PresentationControls>
-                </Canvas>
-            </div>
-            <div
-                style={{
-                    marginLeft: "20px",
-                    color: "#fff",
-                    maxWidth: "400px",
-                    fontFamily: "sans-serif",
-                    lineHeight: 1.5
-                }}
-            >
-                <h2>Celeste / Schrödinger – Dawn’s Enigmatic Feline Companion</h2>
-                <p>
-                    Celeste is no ordinary cat. Rescued from humble beginnings, this playful orange feline provides comic relief in Dawn’s daily life—knocking over picture frames, playfully swiping at phones, and even prompting an accidental taste test of a cat treat. Yet beneath her mischievous exterior lies a deeper, almost quantum mystery. In moments of cosmic significance, Celeste transforms into Schrödinger—a wry, wise guide whose rare, articulate interjections hint at hidden knowledge and the paradoxical nature of existence. Balancing humor with profound insight, she bridges the gap between everyday chaos and the celestial journey that awaits Dawn, embodying both loyalty and the unpredictable spark of serendipity.
-                </p>
-            </div>
+                    <Model modelPath={modelPath} scale={1} />
+                </PresentationControls>
+            </Canvas>
         </div>
     );
 };
 
-useGLTF.preload("/ocat.glb");
+interface GalleryProps {
+    collectibles: { id: number, modelPath: string }[];
+}
+
+const Gallery: FC<GalleryProps> = ({ collectibles }) => {
+    return (
+        <div
+            style={{
+                padding: '2rem',
+                display: 'flex',
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+                gap: '1rem',
+            }}
+        >
+            {collectibles.map(item => (
+                <GalleryItem key={item.id} modelPath={item.modelPath} />
+            ))}
+        </div>
+    );
+};
+
 export default Gallery;

@@ -14,7 +14,6 @@ function App() {
         }
     };
 
-    //Track scroll postion and update with active section
     useEffect(() => {
         const handleScroll = () => {
             let currentSection = "home"; 
@@ -72,7 +71,18 @@ function App() {
 
             <section id="gallery" className="section">
                 <h1>Earth3.0 Gallery</h1>
-                <Gallery/>
+                <Gallery
+                    collectibles={[
+                        { id: 1, modelPath: "/ocat.glb" },
+                        { id: 2, modelPath: "/ocat1.glb" },
+                        { id: 3, modelPath: "/ocat2.glb" },
+                        { id: 4, modelPath: "/ocat3.glb" },
+                        { id: 5, modelPath: "/ocat4.glb" },
+                        { id: 6, modelPath: "/ocat5.glb" },
+                        { id: 7, modelPath: "/ocat6.glb" },
+                        { id: 8, modelPath: "/3dprinter.glb" },
+                    ]}
+                />
             </section>
 
             <section id="services" className="section">
