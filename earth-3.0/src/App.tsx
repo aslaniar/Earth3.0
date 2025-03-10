@@ -80,7 +80,7 @@ function App() {
                         { id: 5, modelPath: "/ocat4.glb" },
                         { id: 6, modelPath: "/ocat5.glb" },
                         { id: 7, modelPath: "/ocat6.glb" },
-                        { id: 8, modelPath: "/3dprinter.glb" },
+                        { id: 8, modelPath: "/ocat7.glb" },
                     ]}
                 />
             </section>
