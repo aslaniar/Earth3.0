@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import {Routes, Route, Link } from "react-router-dom"
+import { Routes, Route, Link } from "react-router-dom";
 import './css/App.css';
 import Gallery from "./Gallery";
 import Episodes from './Episodes';
 import Carousel from "./Carousel.tsx";
+import ClimateSection from "./ClimateSection";
 
 function App() {
     const sections = useMemo(() => ["home", "gallery", "futureEarth", "contact"], []);
@@ -13,7 +14,7 @@ function App() {
         event.preventDefault();
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-            targetElement.scrollIntoView({behavior: 'smooth'});
+            targetElement.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
@@ -78,7 +79,7 @@ function App() {
                                         '/image2.png',
                                         '/image3.png',
                                     ]}
-                                    interval={5000} // switch every 5s
+                                    interval={5000}
                                 />
                             </section>
 
@@ -100,7 +101,7 @@ function App() {
 
                             <section id="futureEarth" className="section">
                                 <h1>Future Earth</h1>
-                                <p>Details about services offered...</p>
+                                <ClimateSection />
                             </section>
 
                             <section id="contact" className="section">
@@ -115,4 +116,5 @@ function App() {
         </div>
     );
 }
+
 export default App;
