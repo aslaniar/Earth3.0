@@ -11,6 +11,7 @@ function App() {
     const [activeSection, setActiveSection] = useState("home");
     const [showScrollbar, setShowScrollbar] = useState(false);
     const hideTimerRef = useRef<number | null>(null);
+    const lastScrollTime = useRef(0);
 
     const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
         event.preventDefault();
@@ -22,12 +23,16 @@ function App() {
 
     useEffect(() => {
         const handleScroll = () => {
+            const now = Date.now();
+            if (now - lastScrollTime.current < 100) return;
+            lastScrollTime.current = now;
+
             let currentSection = "home";
             sections.forEach((id) => {
                 const section = document.getElementById(id);
                 if (section) {
                     const { top, height } = section.getBoundingClientRect();
-                    if (top <= window.innerHeight / 2 && top + height > window.innerHeight / 2) {
+                    if (top <= window.innerHeight / 2 + 20 && top + height > window.innerHeight / 2 + 20) {
                         currentSection = id;
                     }
                 }
@@ -38,7 +43,7 @@ function App() {
                 if (hideTimerRef.current) {
                     clearTimeout(hideTimerRef.current);
                 }
-                hideTimerRef.current = setTimeout(() => {
+                hideTimerRef.current = window.setTimeout(() => {
                     setShowScrollbar(false);
                 }, 2000);
             }
@@ -100,14 +105,14 @@ function App() {
                                 <h1>Earth3.0 Gallery</h1>
                                 <Gallery
                                     collectibles={[
-                                        {id: 1, modelPath: "/ocat.glb"},
-                                        {id: 2, modelPath: "/ocat1.glb"},
-                                        {id: 3, modelPath: "/ocat2.glb"},
-                                        {id: 4, modelPath: "/ocat3.glb"},
-                                        {id: 5, modelPath: "/ocat4.glb"},
-                                        {id: 6, modelPath: "/ocat5.glb"},
-                                        {id: 7, modelPath: "/ocat6.glb"},
-                                        {id: 8, modelPath: "/ocat7.glb"},
+                                        { id: 1, modelPath: "/ocat.glb" },
+                                        { id: 2, modelPath: "/ocat1.glb" },
+                                        { id: 3, modelPath: "/ocat2.glb" },
+                                        { id: 4, modelPath: "/ocat3.glb" },
+                                        { id: 5, modelPath: "/ocat4.glb" },
+                                        { id: 6, modelPath: "/ocat5.glb" },
+                                        { id: 7, modelPath: "/ocat6.glb" },
+                                        { id: 8, modelPath: "/ocat7.glb" },
                                     ]}
                                 />
                             </section>
@@ -124,7 +129,7 @@ function App() {
                         </>
                     }
                 />
-                <Route path="/episodes" element={<Episodes/>}/>
+                <Route path="/episodes" element={<Episodes />} />
             </Routes>
         </div>
     );
