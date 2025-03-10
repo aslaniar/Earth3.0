@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 import './css/App.css';
 import Gallery from "./Gallery";
@@ -9,6 +9,8 @@ import ClimateSection from "./ClimateSection";
 function App() {
     const sections = useMemo(() => ["home", "gallery", "futureEarth", "contact"], []);
     const [activeSection, setActiveSection] = useState("home");
+    const [showScrollbar, setShowScrollbar] = useState(false);
+    const hideTimerRef = useRef<number | null>(null);
 
     const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
         event.preventDefault();
@@ -24,18 +26,27 @@ function App() {
             sections.forEach((id) => {
                 const section = document.getElementById(id);
                 if (section) {
-                    const {top, height} = section.getBoundingClientRect();
+                    const { top, height } = section.getBoundingClientRect();
                     if (top <= window.innerHeight / 2 && top + height > window.innerHeight / 2) {
                         currentSection = id;
                     }
                 }
             });
-            setActiveSection(currentSection);
+            if (currentSection !== activeSection) {
+                setActiveSection(currentSection);
+                setShowScrollbar(true);
+                if (hideTimerRef.current) {
+                    clearTimeout(hideTimerRef.current);
+                }
+                hideTimerRef.current = setTimeout(() => {
+                    setShowScrollbar(false);
+                }, 2000);
+            }
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [sections]);
+    }, [sections, activeSection]);
 
     return (
         <div className="App">
@@ -64,10 +75,12 @@ function App() {
                                 </nav>
                             </header>
 
-                            <div className="scrollbar">
+                            <div className={`scrollbar ${showScrollbar ? "" : "hide"}`}>
                                 {sections.map((id) => (
-                                    <div key={id}
-                                         className={`scroll-indicator ${activeSection === id ? "active" : ""}`}/>
+                                    <div
+                                        key={id}
+                                        className={`scroll-indicator ${activeSection === id ? "active" : ""}`}
+                                    />
                                 ))}
                             </div>
 

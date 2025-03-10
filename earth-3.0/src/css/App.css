@@ -13,19 +13,26 @@ body {
   scroll-behavior: smooth; /* If you prefer using CSS-based smooth scrolling */
 }
 
-/* Scroll Bar  */
 .scrollbar {
   position: fixed;
-  right: 30px; /* Keep it on the right */
-  top: 9%; /* Move slightly down to ensure visibility */
-  transform: translateY(0); /* No need to shift since we use top */
+  right: 30px;
+  top: 9%;
+  transform: translateY(0);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; 
-  height: 90vh; 
+  justify-content: space-between;
+  height: 90vh;
   z-index: 999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
+
+.scrollbar.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 /* Vertical Line */
 .scrollbar::before {
