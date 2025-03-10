@@ -103,7 +103,7 @@ body {
   min-height: 100vh; /* Full viewport height */
   padding: 5rem 2rem;
   /* Ensure sections are spaced away from fixed navbar */
-  margin-top: 4rem;
+  text-align: center;
 }
 
 .section h1 {

@@ -3,39 +3,38 @@ import {Routes, Route, Link } from "react-router-dom"
 import './css/App.css';
 import Gallery from "./Gallery";
 import Episodes from './Episodes';
+import Carousel from "./Carousel.tsx";
 
 function App() {
-    const sections = useMemo(() => ["home", "gallery", "services", "contact"], []);
-    const [activeSection, setActiveSection] = useState("home");  
+    const sections = useMemo(() => ["home", "gallery", "futureEarth", "contact"], []);
+    const [activeSection, setActiveSection] = useState("home");
 
     const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
         event.preventDefault();
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+            targetElement.scrollIntoView({behavior: 'smooth'});
         }
     };
 
     useEffect(() => {
         const handleScroll = () => {
-            let currentSection = "home"; 
-            
+            let currentSection = "home";
             sections.forEach((id) => {
-                const section = document.getElementById(id); 
-                if (section) { 
-                    const {top, height} = section.getBoundingClientRect(); 
-                    if (top <= window.innerHeight / 2 && top + height > window.innerHeight / 2){ 
+                const section = document.getElementById(id);
+                if (section) {
+                    const {top, height} = section.getBoundingClientRect();
+                    if (top <= window.innerHeight / 2 && top + height > window.innerHeight / 2) {
                         currentSection = id;
                     }
                 }
             });
-            setActiveSection(currentSection);  
+            setActiveSection(currentSection);
         };
 
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);      
+        return () => window.removeEventListener("scroll", handleScroll);
     }, [sections]);
-
 
     return (
         <div className="App">
@@ -66,14 +65,21 @@ function App() {
 
                             <div className="scrollbar">
                                 {sections.map((id) => (
-                                    <div key={id} className={`scroll-indicator ${activeSection === id ? "active" : ""}`} />
+                                    <div key={id}
+                                         className={`scroll-indicator ${activeSection === id ? "active" : ""}`}/>
                                 ))}
                             </div>
 
-
                             <section id="home" className="section">
                                 <h1>Welcome to Earth3.0</h1>
-                                <p>This is the home section.</p>
+                                <Carousel
+                                    images={[
+                                        '/image1.png',
+                                        '/image2.png',
+                                        '/image3.png',
+                                    ]}
+                                    interval={5000} // switch every 5s
+                                />
                             </section>
 
                             <section id="gallery" className="section">
@@ -92,8 +98,8 @@ function App() {
                                 />
                             </section>
 
-                            <section id="services" className="section">
-                                <h1>Our Services</h1>
+                            <section id="futureEarth" className="section">
+                                <h1>Future Earth</h1>
                                 <p>Details about services offered...</p>
                             </section>
 
@@ -109,5 +115,4 @@ function App() {
         </div>
     );
 }
-
 export default App;
