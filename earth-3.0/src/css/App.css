@@ -1,76 +1,76 @@
-/* Basic resets */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/*!* Basic resets *!*/
+/** {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  box-sizing: border-box;*/
+/*}*/
 
-/* Body styling */
-body {
-  font-family: Arial, sans-serif;
-  color: #fdfdfd;
-  background: #1e1e1e;
-  scroll-behavior: smooth; /* If you prefer using CSS-based smooth scrolling */
-}
+/*!* Body styling *!*/
+/*body {*/
+/*  font-family: Arial, sans-serif;*/
+/*  color: #fdfdfd;*/
+/*  background: #1e1e1e;*/
+/*  scroll-behavior: smooth; !* If you prefer using CSS-based smooth scrolling *!*/
+/*}*/
 
-/* Navbar styling */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #333;
-  padding: 0.75rem 2rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-}
+/*!* Navbar styling *!*/
+/*.navbar {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: space-between;*/
+/*  background-color: #333;*/
+/*  padding: 0.75rem 2rem;*/
+/*  position: fixed;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  width: 100%;*/
+/*  z-index: 999;*/
+/*}*/
 
-.navbar-left {
-  display: flex;
-  align-items: center;
-}
+/*.navbar-left {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #fff;
-  margin-right: 1rem;
-}
+/*.logo {*/
+/*  font-size: 1.5rem;*/
+/*  font-weight: bold;*/
+/*  color: #fff;*/
+/*  margin-right: 1rem;*/
+/*}*/
 
-.navbar-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
+/*.navbar-nav ul {*/
+/*  list-style: none;*/
+/*  display: flex;*/
+/*  gap: 1rem;*/
+/*}*/
 
-.navbar-nav li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem;
-  transition: background-color 0.2s ease;
-}
+/*.navbar-nav li a {*/
+/*  color: #fff;*/
+/*  text-decoration: none;*/
+/*  padding: 0.5rem;*/
+/*  transition: background-color 0.2s ease;*/
+/*}*/
 
-.navbar-nav li a:hover {
-  background-color: #555;
-  border-radius: 4px;
-}
+/*.navbar-nav li a:hover {*/
+/*  background-color: #555;*/
+/*  border-radius: 4px;*/
+/*}*/
 
-/* Section styling */
-.section {
-  min-height: 100vh; /* Full viewport height */
-  padding: 5rem 2rem;
-  /* Ensure sections are spaced away from fixed navbar */
-  margin-top: 4rem;
-}
+/*!* Section styling *!*/
+/*.section {*/
+/*  min-height: 100vh; !* Full viewport height *!*/
+/*  padding: 5rem 2rem;*/
+/*  !* Ensure sections are spaced away from fixed navbar *!*/
+/*  margin-top: 4rem;*/
+/*}*/
 
-.section h1 {
-  margin-bottom: 1rem;
-  color: #fff;
-}
+/*.section h1 {*/
+/*  margin-bottom: 1rem;*/
+/*  color: #fff;*/
+/*}*/
 
-.section p {
-  max-width: 600px;
-  line-height: 1.6;
-}
+/*.section p {*/
+/*  max-width: 600px;*/
+/*  line-height: 1.6;*/
+/*}*/

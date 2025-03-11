@@ -1,6 +1,7 @@
 import React from 'react';
 import './css/App.css';
 import Gallery from "./Gallery";
+import EarthScene from "./EarthScene.tsx";
 
 function App() {
     const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>, targetId: string) => {
@@ -10,9 +11,11 @@ function App() {
             targetElement.scrollIntoView({ behavior: 'smooth' });
         }
     };
-
+    return (<EarthScene />)
     return (
         <div className="App">
+
+            <EarthScene />
             {/* Header / Navbar */}
             <header className="navbar">
                 <div className="navbar-left">
