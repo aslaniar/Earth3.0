@@ -5,10 +5,10 @@ import Gallery from "./Gallery";
 import Episodes from './Episodes';
 import Carousel from "./Carousel.tsx";
 import ClimateFacts from "./ClimateFacts.tsx";
-import FutureEarth from "./FutureEarth.tsx";
+import ClimateData from "./ClimateData.tsx";
 
 function App() {
-    const sections = useMemo(() => ["home", "gallery", "futureEarth","climateFacts" ,"contact"], []);
+    const sections = useMemo(() => ["home", "gallery","climateFacts" ,"contact"], []);
     const [activeSection, setActiveSection] = useState("home");
     const [showScrollbar, setShowScrollbar] = useState(false);
     const hideTimerRef = useRef<number | null>(null);
@@ -127,13 +127,9 @@ function App() {
                                 />
                             </section>
 
-                            <section id="futureEarth" className="section">
-                                <h1>Future Earth</h1>
-                                <FutureEarth/>
-                            </section>
-
                             <section id="climateFacts" className="section">
                                 <h1>Climate Facts</h1>
+                                <ClimateData/>
                                 <ClimateFacts/>
                             </section>
 

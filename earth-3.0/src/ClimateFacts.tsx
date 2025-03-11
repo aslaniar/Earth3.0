@@ -18,19 +18,19 @@ const climateFacts: ClimateFact[] = [
         title: "Wildfires on the Rise",
         content: "Wildfires have become more frequent and intense. Satellite records indicate that extreme wildfire events have more than doubled over the past few decades, driven by prolonged droughts and higher temperatures.",
         referenceLink: "https://www.globalchange.gov/browse/indicators/us-wildfires",
-        imageUrl: "https://example.com/wildfire.jpg"
+        imageUrl: "https://news.harvard.edu/wp-content/uploads/2021/09/iStock-antarctica-anyaberkut.jpg"
     },
     {
         title: "Ocean Acidification",
         content: "With CO₂ levels increasing, the oceans absorb a significant portion, leading to a drop in pH. Since the Industrial Revolution, ocean acidity has increased by about 26%, impacting coral reefs and marine life.",
         referenceLink: "https://www.noaa.gov/education/resource-collections/ocean-coasts/ocean-acidification",
-        imageUrl: "https://example.com/ocean-acidification.jpg"
+        imageUrl: "https://news.harvard.edu/wp-content/uploads/2021/09/iStock-antarctica-anyaberkut.jpg"
     },
     {
         title: "Extreme Weather Events",
         content: "Extreme events such as heatwaves, heavy rainfall, and storms are on the rise. Studies show that human-induced warming is strongly linked to increased frequency and intensity of such events.",
         referenceLink: "https://www.ipcc.ch/report/ar6/wg1/",
-        imageUrl: "https://example.com/extreme-weather.jpg"
+        imageUrl: "https://news.harvard.edu/wp-content/uploads/2021/09/iStock-antarctica-anyaberkut.jpg"
     }
 ];
 

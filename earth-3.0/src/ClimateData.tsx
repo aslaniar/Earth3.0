@@ -41,40 +41,51 @@ const ClimateData: React.FC = () => {
         });
     }, []);
 
+    const quote = `"A TV screen clicks through news channels, revealing a stark portrait of our planet in distress. Polar ice caps are melting at unprecedented rates, while raging wildfires consume vast stretches of forest and pollution chokes our urban skies. These images are not the fantasies of science fiction—they are a clear and present warning of the global climate crisis. Every frame is a call to action, urging us to rethink our impact on Earth and embrace a future built on sustainability and renewal."`;
+
     return (
-        <div style={{ margin: '2rem 0' }}>
-            <h2>Climate Trends (1984–2024)</h2>
-            <Line
-                data={chartData}
-                options={{
-                    responsive: true,
-                    interaction: {
-                        mode: 'index',
-                        intersect: false,
-                    },
-                    scales: {
-                        y1: {
-                            type: 'linear',
-                            position: 'left',
-                            title: {
-                                display: true,
-                                text: 'Temperature Anomaly (°C)'
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap'}}>
+            <div style={{flex: '1 1 50%', padding: '1rem'}}>
+                <div style={{margin: '2rem 0'}}>
+                    <h2>Climate Trends (1984–2024)</h2>
+                    <Line
+                        data={chartData}
+                        options={{
+                            responsive: true,
+                            interaction: {
+                                mode: 'index',
+                                intersect: false,
                             },
-                        },
-                        y2: {
-                            type: 'linear',
-                            position: 'right',
-                            title: {
-                                display: true,
-                                text: 'CO₂ (ppm)'
+                            scales: {
+                                y1: {
+                                    type: 'linear',
+                                    position: 'left',
+                                    title: {
+                                        display: true,
+                                        text: 'Temperature Anomaly (°C)'
+                                    },
+                                },
+                                y2: {
+                                    type: 'linear',
+                                    position: 'right',
+                                    title: {
+                                        display: true,
+                                        text: 'CO₂ (ppm)'
+                                    },
+                                    grid: {
+                                        drawOnChartArea: false,
+                                    },
+                                },
                             },
-                            grid: {
-                                drawOnChartArea: false,
-                            },
-                        },
-                    },
-                }}
-            />
+                        }}
+                    />
+                </div>
+            </div>
+            <div style={{flex: '1 1 50%', padding: '1rem', borderLeft: '1px solid #ccc'}}>
+                <blockquote style={{fontStyle: 'italic', color: '#ffffff', fontSize: '1.2rem'}}>
+                    {quote}
+                </blockquote>
+            </div>
         </div>
     );
 };
