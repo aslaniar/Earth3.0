@@ -26,15 +26,15 @@ const climateSection: ClimateFact[] = [
             "Wildfires have become more frequent and intense. Satellite records indicate that extreme wildfire events have more than doubled over the past few decades, driven by prolonged droughts and higher temperatures.",
         referenceLink: "https://www.globalchange.gov/browse/indicators/us-wildfires",
         imageUrl:
-            "https://news.harvard.edu/wp-content/uploads/2021/09/iStock-antarctica-anyaberkut.jpg",
+            "https://www.climaterealityproject.org/sites/default/files/styles/intro_title_impact_small/public/2024-07/GettyImages-1740506474.jpg?h=1404f6ec&itok=hgHYJ3qg",
     },
     {
         title: "Ocean Acidification",
         content:
             "With CO₂ levels increasing, the oceans absorb a significant portion, leading to a drop in pH. Since the Industrial Revolution, ocean acidity has increased by about 26%, impacting coral reefs and marine life.",
         referenceLink: "https://www.noaa.gov/education/resource-collections/ocean-coasts/ocean-acidification",
-        imageUrl:
-            "https://news.harvard.edu/wp-content/uploads/2021/09/iStock-antarctica-anyaberkut.jpg",
+        imageUrl: "https://cdn.mos.cms.futurecdn.net/WzSZMrDM5zRdJMLENYy5Hf.jpg",
+
     },
     {
         title: "Extreme Weather Events",
@@ -42,7 +42,7 @@ const climateSection: ClimateFact[] = [
             "Extreme events such as heatwaves, heavy rainfall, and storms are on the rise. Studies show that human-induced warming is strongly linked to increased frequency and intensity of such events.",
         referenceLink: "https://www.ipcc.ch/report/ar6/wg1/",
         imageUrl:
-            "https://news.harvard.edu/wp-content/uploads/2021/09/iStock-antarctica-anyaberkut.jpg",
+            "https://d2pn8kiwq2w21t.cloudfront.net/original_images/extremeweather_main_HTHZCoq.jpg",
     },
 ];
 
