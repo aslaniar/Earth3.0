@@ -5,9 +5,10 @@ import Gallery from "./Gallery";
 import Episodes from './Episodes';
 import Carousel from "./Carousel.tsx";
 import ClimateSection from "./ClimateSection";
+import ClimateFacts from "./ClimateFacts.tsx";
 
 function App() {
-    const sections = useMemo(() => ["home", "gallery", "futureEarth", "contact"], []);
+    const sections = useMemo(() => ["home", "gallery", "futureEarth","climateFacts" ,"contact"], []);
     const [activeSection, setActiveSection] = useState("home");
     const [showScrollbar, setShowScrollbar] = useState(false);
     const hideTimerRef = useRef<number | null>(null);
@@ -105,24 +106,35 @@ function App() {
                                 <h1>Earth3.0 Gallery</h1>
                                 <Gallery
                                     collectibles={[
-                                        { id: 1, modelPath: "/ocat.glb",
+                                        {
+                                            id: 1, modelPath: "/ocat.glb",
                                             description: "Schrödinger – Dawn’s Enigmatic Companion. Schrödinger is the red cat with an air of mystery and wisdom, named after the famous quantum thought experiment. Far more than comic relief, he serves as a philosophical symbol in Earth3.0—bridging the paradoxes of quantum mechanics with the human journey. With his sleek, shifting coat and curious, independent nature, he inspires introspection and self-discovery in Dawn, reminding us of the profound interconnectedness of all things."
                                         },
-                                        { id: 2, modelPath: "/mysteriousLocket.glb",
+                                        {
+                                            id: 2, modelPath: "/mysteriousLocket.glb",
                                             description: "The Mysterious Locket – The locket is not just a piece of jewelry but a dual-natured object that combines industrial design with ancient, symbolic artistry. Its glowing and transformative properties signal the beginning of Dawn’s cosmic journey." +
                                                 "When Dawn clasps the locket, it triggers an otherworldly sequence—a glowing beam, a shift in scenery, and the activation of cosmic technology. It functions as the narrative key that unlocks (quite literally) the passage from Earth 2.0 (our familiar world) into the radical possibilities of Earth 3.0."
                                         },
-                                        { id: 3, modelPath: "/cupcake.glb",
-                                        description: "The Birthday Cupcake – Set on a worn table in Dawn’s living room, the Birthday Cupcake is a modest, half-eaten treat. Its golden sponge, exposed by a bite, contrasts with a delicate layer of melting frosting. A solitary candle—partly melted with wax dribbling down its side—marks a faded celebration. A scribbled note reading “To our favorite client on their SPECIAL DAY” lies nearby, blending everyday warmth with ironic cosmic destiny."},
-                                        { id: 4, modelPath: "/adward.glb",
-                                            description: "The Environmental Award – Resting on a dusty shelf, the Environmental Award is a relic of past eco-achievements. Its brushed metal base supports an intricate emblem—perhaps a globe entwined with a tree—symbolizing Earth’s fragile beauty. Once vibrant with greens and blues, its faded hues and subtle engravings now whisper of former glory and neglected passion, a bittersweet reminder of environmental ideals."},
+                                        {
+                                            id: 3, modelPath: "/cupcake.glb",
+                                            description: "The Birthday Cupcake – Set on a worn table in Dawn’s living room, the Birthday Cupcake is a modest, half-eaten treat. Its golden sponge, exposed by a bite, contrasts with a delicate layer of melting frosting. A solitary candle—partly melted with wax dribbling down its side—marks a faded celebration. A scribbled note reading “To our favorite client on their SPECIAL DAY” lies nearby, blending everyday warmth with ironic cosmic destiny."
+                                        },
+                                        {
+                                            id: 4, modelPath: "/adward.glb",
+                                            description: "The Environmental Award – Resting on a dusty shelf, the Environmental Award is a relic of past eco-achievements. Its brushed metal base supports an intricate emblem—perhaps a globe entwined with a tree—symbolizing Earth’s fragile beauty. Once vibrant with greens and blues, its faded hues and subtle engravings now whisper of former glory and neglected passion, a bittersweet reminder of environmental ideals."
+                                        },
                                     ]}
                                 />
                             </section>
 
                             <section id="futureEarth" className="section">
                                 <h1>Future Earth</h1>
-                                <ClimateSection />
+                                <ClimateSection/>
+                            </section>
+
+                            <section id="climateFacts" className="section">
+                                <h1>Climate Facts</h1>
+                                <ClimateFacts/>
                             </section>
 
                             <section id="contact" className="section">
@@ -132,7 +144,7 @@ function App() {
                         </>
                     }
                 />
-                <Route path="/episodes" element={<Episodes />} />
+                <Route path="/episodes" element={<Episodes/>}/>
             </Routes>
         </div>
     );
