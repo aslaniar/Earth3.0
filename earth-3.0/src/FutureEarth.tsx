@@ -1,7 +1,6 @@
 import ClimateData from './ClimateData';
-import ClimateFacts from './ClimateFacts';
 
-const ClimateSection = () => {
+const FutureEarth = () => {
     const quote = `"A TV screen clicks through news channels, revealing a stark portrait of our planet in distress. Polar ice caps are melting at unprecedented rates, while raging wildfires consume vast stretches of forest and pollution chokes our urban skies. These images are not the fantasies of science fiction—they are a clear and present warning of the global climate crisis. Every frame is a call to action, urging us to rethink our impact on Earth and embrace a future built on sustainability and renewal."`;
 
     return (
@@ -24,10 +23,9 @@ const ClimateSection = () => {
                 }}>
                     {quote}
                 </blockquote>
-                <ClimateFacts />
             </div>
         </div>
     );
 };
 
-export default ClimateSection;
+export default FutureEarth;

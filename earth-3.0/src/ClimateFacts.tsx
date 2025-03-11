@@ -43,7 +43,6 @@ const ClimateFacts: FC = () => {
             borderRadius: "8px",
             marginTop: "1.5rem"
         }}>
-            <h3 style={{ marginBottom: "1rem" }}>Climate Facts</h3>
             <ul style={{ listStyleType: "none", paddingLeft: 0 }}>
                 {climateFacts.map((fact, index) => (
                     <li key={index} style={{ marginBottom: "1.5rem", display: "flex", gap: "1rem" }}>

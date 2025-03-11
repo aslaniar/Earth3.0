@@ -4,8 +4,8 @@ import './css/App.css';
 import Gallery from "./Gallery";
 import Episodes from './Episodes';
 import Carousel from "./Carousel.tsx";
-import ClimateSection from "./ClimateSection";
 import ClimateFacts from "./ClimateFacts.tsx";
+import FutureEarth from "./FutureEarth.tsx";
 
 function App() {
     const sections = useMemo(() => ["home", "gallery", "futureEarth","climateFacts" ,"contact"], []);
@@ -129,7 +129,7 @@ function App() {
 
                             <section id="futureEarth" className="section">
                                 <h1>Future Earth</h1>
-                                <ClimateSection/>
+                                <FutureEarth/>
                             </section>
 
                             <section id="climateFacts" className="section">
