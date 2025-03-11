@@ -45,7 +45,7 @@ const Carousel: React.FC<CarouselProps> = ({
     };
 
     return (
-        <div className="carousel-container">
+        <div className="carousel-container" style={{ width: '100%' }}>
             <div className="carousel-overlay">
                 <div className="carousel-content">
                     <h1>{title}</h1>

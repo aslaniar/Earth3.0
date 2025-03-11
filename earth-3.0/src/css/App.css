@@ -5,6 +5,16 @@
   box-sizing: border-box;
 }
 
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+
 /* Body styling */
 body {
   font-family: 'Inter', sans-serif;
@@ -13,14 +23,18 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   line-height: 1.6;
+  width: 100%;
 }
+
+
 
 /* App container */
 .App {
   position: relative;
   min-height: 100vh;
+  width: 100%;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  overflow: hidden;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* Scrollbar styling */
@@ -181,10 +195,11 @@ body {
 /* Section styling */
 .section {
   min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem 1rem 4rem;
+  padding: 6rem 0 4rem; /* Removed horizontal padding */
   position: relative;
   overflow: hidden;
 }
@@ -202,9 +217,11 @@ body {
 
 .section-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%; /* Changed from 1200px to 100% */
+  padding: 0 2rem; /* Add horizontal padding instead of fixed width */
   margin: 0 auto;
 }
+
 
 .section-title {
   font-size: 3rem;
