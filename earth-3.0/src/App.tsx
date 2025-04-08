@@ -5,9 +5,10 @@ import Gallery from "./Gallery";
 import Episodes from './Episodes';
 import Carousel from "./Carousel";
 import ClimateSection from "./ClimateSection";
+import AIChatBot from "./AIChatBot";
 
 function App() {
-    const sections = useMemo(() => ["home", "gallery", "climateFacts", "contact"], []);
+    const sections = useMemo(() => ["home", "gallery", "climateFacts", "chatbot", "contact"], []);
     const [activeSection, setActiveSection] = useState("home");
     const [showScrollbar, setShowScrollbar] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -154,6 +155,16 @@ function App() {
                                 <div className="section-container">
                                     <h1 className="section-title">Climate Facts</h1>
                                     <ClimateSection />
+                                </div>
+                            </section>
+
+                            <section id="chatbot" className="section">
+                                <div className="section-container">
+                                    <h1 className="section-title">Chat with Earth3.0 Characters</h1>
+                                    <p className="section-description">
+                                        Have a conversation with characters from the Earth3.0 show. Ask them about their experiences, the show's themes, or their perspectives on environmental issues.
+                                    </p>
+                                    <AIChatBot />
                                 </div>
                             </section>
 
