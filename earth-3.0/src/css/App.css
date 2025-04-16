@@ -229,6 +229,7 @@ body {
   text-align: center;
   background: linear-gradient(90deg, #4ca5ff, #1da1f2, #4ca5ff);
   background-size: 200% auto;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
