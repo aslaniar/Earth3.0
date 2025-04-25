@@ -1,7 +1,7 @@
 /* Basic Page Styling */
 .episodes-page {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: #fdfdfd;
     text-align: center;
@@ -78,8 +78,9 @@
 .episode-image {
     width: 100%;
     height: auto;
+    display: block;
+    object-fit: cover;
     border-radius: 6px;
-    overflow: hidden;
 }
 .episode-image img {
     width: 100%;
@@ -140,21 +141,79 @@
     margin-top: 1.5rem;
     color: #4ca5ff;
 }
+.arrow-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  @media (max-width: 768px) {
+    .arrow-group {
+      flex-direction: column;
+    }
+  }
 /*For Mobile Devices*/
 @media (max-width: 768px) {
-    .episodes-title {
-        font-size: 2rem;
+    .carousel {
+      flex-direction: column;
+      align-items: center;
+      gap:1rem
     }
-
-    .episode-card {
-        padding: 1rem;
-    }
-
+  
     .arrow {
-        font-size: 2rem;
+      font-size: 2rem;
+      margin: 0;
     }
-
+  
+    .episode-container {
+      width: 90vw;
+    }
+  
+    .episode-card {
+      width: 90vw;
+      height: auto;
+      padding: 1rem;
+    }
+  
+    .episode-image img {
+      max-height: 200px;
+    }
+  
     .episode-details {
-        padding: 1.5rem;
+      padding: 1rem;
+      width: 90%;
     }
-}
+  
+    .episodes-title {
+      font-size: 2rem;
+    }
+  
+    .detail-title {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .episodes-title {
+      font-size: 1.5rem;
+    }
+  
+    .episode-card {
+      padding: 0.8rem;
+    }
+  
+    .back-button {
+      font-size: 16px;
+      top: 10px;
+      left: 10px;
+    }
+  
+    .dots {
+      margin: 15px 0;
+    }
+  
+    .dot {
+      width: 8px;
+      height: 8px;
+    }
+  }
