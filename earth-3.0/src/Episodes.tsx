@@ -44,8 +44,29 @@ const Episodes = () => {
                 <h3 className="detail-title">Description:</h3>
                 <p>{episodes[currentIndex].description}</p>
 
-                <h3 className="detail-title">Charities:</h3>
-                <p>{episodes[currentIndex].charities}</p>
+                <h3 className="detail-title"> Related Charities:</h3>
+                <div className="charity-list">
+                    {episodes[currentIndex].charities.map((charity, index) => (
+                        <div key = {index} className="charity-item"> 
+                            < div className="charity-header">
+                                <a
+                                   href={charity.url}
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   className="charity-title"
+                                 >
+                                    {charity.name}
+                                </a>
+                                <img
+                                    src={charity.logo}
+                                    alt={`${charity.name} logo`}
+                                    className="charity-logo"
+                                />
+                            </div>
+                            <p className="charity-description"> {charity.description}</p>
+                        </div>
+                    ))} 
+                </div>
 
             </div>
 
