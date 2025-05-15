@@ -21,9 +21,15 @@ export interface Episode {
         charities:  [
             {
                 name: "Clean Air Task Force", 
-                url: "https://charity1.com",
+                url: "https://www.catf.us/",
                 logo: "/catf-logo.jpeg", 
                 description: "Dedicated to reducing atmospheric pollution through innovation in energy and transportation. CATF (Clean Air Task Force)  advocates for policies and technologies that combat climate change by cutting carbon emissions and promoting clean, scalable solutions such as advanced nuclear, carbon capture, and zero-emission fuels."
+            },
+            {
+                name: "The Ocean Cleanup", 
+                url: "https://theoceancleanup.com/",
+                logo: "/toc-logo.png",
+                description: "Our cleaning technologies are deployed around the world as we conduct the largest cleanup in history. For over ten years, The Ocean Cleanup has been researching, extracting, and monitoring plastic pollution in oceans and rivers globally – with millions of kilograms removed to date."
             }
         ],
         image: "/Episode1.png"
