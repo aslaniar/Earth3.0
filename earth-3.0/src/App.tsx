@@ -6,9 +6,10 @@ import Episodes from './Episodes';
 import Carousel from "./Carousel";
 import ClimateSection from "./ClimateSection";
 import AIChatBot from "./AIChatBot";
+// import CharacterGrid from "./CharactersGrid.tsx";
 
 function App() {
-    const sections = useMemo(() => ["home", "gallery", "climateFacts", "chatbot", "contact"], []);
+    const sections = useMemo(() => ["home", "gallery", "climateFacts", "characters", "chatbot", "contact"], []);
     const [activeSection, setActiveSection] = useState("home");
     const [showScrollbar, setShowScrollbar] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -154,7 +155,18 @@ function App() {
                             <section id="climateFacts" className="section">
                                 <div className="section-container">
                                     <h1 className="section-title">Climate Facts</h1>
-                                    <ClimateSection />
+                                    <ClimateSection/>
+                                </div>
+                            </section>
+
+                            <section id="characters" className="section">
+                                <div className="section-container">
+                                    <h1 className="section-title">View Earth 3.0 Characters</h1>
+                                    <p className="section-description">
+                                        Dive deeper into the world of Earth 3.0! Check out the team devoted to creating Earth
+                                        right.
+                                    </p>
+                                    {/*<CharacterGrid/>*/}
                                 </div>
                             </section>
 
@@ -162,9 +174,10 @@ function App() {
                                 <div className="section-container">
                                     <h1 className="section-title">Chat with Earth3.0 Characters</h1>
                                     <p className="section-description">
-                                        Have a conversation with characters from the Earth3.0 show. Ask them about their experiences, the show's themes, or their perspectives on environmental issues.
+                                        Have a conversation with characters from the Earth3.0 show. Ask them about their
+                                        experiences, the show's themes, or their perspectives on environmental issues.
                                     </p>
-                                    <AIChatBot />
+                                    <AIChatBot/>
                                 </div>
                             </section>
 
@@ -175,10 +188,10 @@ function App() {
                                         <div className="contact-card">
                                             <div className="contact-form">
                                                 <div className="form-group">
-                                                    <input type="text" placeholder="Your Name" />
+                                                    <input type="text" placeholder="Your Name"/>
                                                 </div>
                                                 <div className="form-group">
-                                                    <input type="email" placeholder="Your Email" />
+                                                    <input type="email" placeholder="Your Email"/>
                                                 </div>
                                                 <div className="form-group">
                                                     <textarea placeholder="Your Message"></textarea>
@@ -187,7 +200,8 @@ function App() {
                                             </div>
                                             <div className="contact-info">
                                                 <h3>Get in Touch</h3>
-                                                <p>Have questions about Earth3.0? Contact our team for more information.</p>
+                                                <p>Have questions about Earth3.0? Contact our team for more
+                                                    information.</p>
                                                 <div className="contact-details">
                                                     <div className="contact-item">
                                                         <span className="contact-icon">✉️</span>
@@ -210,7 +224,7 @@ function App() {
                         </>
                     }
                 />
-                <Route path="/episodes" element={<Episodes />}/>
+                <Route path="/episodes" element={<Episodes/>}/>
             </Routes>
         </div>
     );

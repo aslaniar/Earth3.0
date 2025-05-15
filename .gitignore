@@ -1,4 +1,18 @@
-.DS_Store
-node_modules/
+# Build output
+/dist/
+/infra/cdk.out/
+/infra/node_modules/
+/earth-3.0/node_modules/
 
-*.iml
+# IDE junk
+*.log
+.DS_Store
+*.swp
+
+# CDK context files (generated)
+infra/cdk.context.json
+
+# Sensitive info
+.env
+.env.local
+.aws-credentials.json
