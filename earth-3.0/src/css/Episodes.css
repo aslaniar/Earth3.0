@@ -1,0 +1,253 @@
+/* Basic Page Styling */
+.episodes-page {
+    width: 100vw;
+    height: auto;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #fdfdfd;
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 3rem;
+}
+
+/* Back Button */
+.back-button {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    text-decoration: none;
+    color: #4ca5ff;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.05);;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Episodes Title */
+.episodes-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #4ca5ff, #1da1f2, #4ca5ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 3rem;
+}
+
+/* Carousel Layout */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+.episode-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.episode-title{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4ca5ff;
+    margin: 0;
+}
+.episode-card {
+    background: rgba(255, 255, 255, 0.05); 
+    border-radius: 10px;
+    padding: 4px; 
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.episode-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.episode-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Navigation Arrows */
+.arrow {
+    background: none;
+    border: none;
+    color: #4ca5ff;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.arrow:hover {
+    opacity: 0.7;
+}
+
+/* Episode Dots */
+.dots {
+    margin: 1rem 0 2rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: inline-block;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #4ca5ff;
+    transform: scale(1.4);
+}
+
+/* Episode Details */
+.episode-details {
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(76, 165, 255, 0.1);
+}
+
+.detail-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    color: #4ca5ff;
+}
+
+/* For Charity Formatting*/
+.charity-list{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.charity-item {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(76, 165, 255, 0.1);
+}
+
+.charity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.charity-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #9fc6ee;
+  text-decoration: none;
+}
+
+.charity-title:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.charity-logo {
+  height: 40px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
+.charity-description {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+/*For Mobile Devices*/
+@media (max-width: 768px) {
+    .carousel {
+      flex-direction: column;
+      align-items: center;
+      gap:1rem
+    }
+  
+    .arrow {
+      font-size: 2rem;
+      margin: 0;
+    }
+  
+    .episode-container {
+      width: 90vw;
+    }
+  
+    .episode-card {
+      width: 90vw;
+      height: auto;
+      padding: 1rem;
+    }
+  
+    .episode-image img {
+      max-height: 200px;
+    }
+  
+    .episode-details {
+      padding: 1rem;
+      width: 90%;
+    }
+  
+    .episodes-title {
+      font-size: 2rem;
+    }
+  
+    .detail-title {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .episodes-title {
+      font-size: 1.5rem;
+    }
+  
+    .episode-card {
+      padding: 0.8rem;
+    }
+  
+    .back-button {
+      font-size: 16px;
+      top: 10px;
+      left: 10px;
+    }
+  
+    .dots {
+      margin: 15px 0;
+    }
+  
+    .dot {
+      width: 8px;
+      height: 8px;
+    }
+  }
