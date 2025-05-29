@@ -6,7 +6,6 @@ import Episodes from './Episodes';
 import Carousel from "./Carousel";
 import ClimateSection from "./ClimateSection";
 import AIChatBot from "./AIChatBot";
-import CharacterGrid from "./CharacterGrid.tsx";
 import CharacterCard from "./CharacterCard.tsx";
 
 function App() {
