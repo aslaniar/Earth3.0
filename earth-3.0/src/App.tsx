@@ -62,6 +62,11 @@ function App() {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    //to fix the bug where the website will load in the chatbot section
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="App">
             <Routes>

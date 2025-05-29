@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './css/Carousel.css';
+import {useNavigate} from "react-router-dom";
 
 interface CarouselProps {
     images: string[];
@@ -44,13 +45,15 @@ const Carousel: React.FC<CarouselProps> = ({
         }, 500);
     };
 
+    let navigate = useNavigate();
+
     return (
         <div className="carousel-container" style={{ width: '100%' }}>
             <div className="carousel-overlay">
                 <div className="carousel-content">
                     <h1>{title}</h1>
                     <p>{subtitle}</p>
-                    <button className="carousel-cta-button">Explore Now</button>
+                    <button className="carousel-cta-button" onClick={() => navigate('/episodes')}>Explore Now</button>
                 </div>
             </div>
 
