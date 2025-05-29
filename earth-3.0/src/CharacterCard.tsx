@@ -150,8 +150,6 @@ const CharacterCard = () => {
                         </p>
                     </div>
                 </div>
-
-
             </div>
         </div>
     )
