@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.parent > div {
+    @apply flex justify-center bg-slate-900 rounded-2xl shadow-xl transition duration-300 ease-in-out hover:scale-102 aspect-3/4;
+}

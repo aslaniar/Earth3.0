@@ -6,7 +6,8 @@ import Episodes from './Episodes';
 import Carousel from "./Carousel";
 import ClimateSection from "./ClimateSection";
 import AIChatBot from "./AIChatBot";
-// import CharacterGrid from "./CharactersGrid.tsx";
+import CharacterGrid from "./CharacterGrid.tsx";
+import CharacterCard from "./CharacterCard.tsx";
 
 function App() {
     const sections = useMemo(() => ["home", "gallery", "climateFacts", "characters", "chatbot", "contact"], []);
@@ -166,7 +167,7 @@ function App() {
                                         Dive deeper into the world of Earth 3.0! Check out the team devoted to creating Earth
                                         right.
                                     </p>
-                                    {/*<CharacterGrid/>*/}
+                                    <CharacterCard/>
                                 </div>
                             </section>
 
