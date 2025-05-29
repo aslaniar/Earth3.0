@@ -166,7 +166,7 @@ function App() {
 
                             <section id="characters" className="section">
                                 <div className="section-container">
-                                    <h1 className="section-title">View Earth 3.0 Characters</h1>
+                                    <h1 className="section-title">View Earth 3.0's Characters</h1>
                                     <p className="section-description">
                                         Dive deeper into the world of Earth 3.0! Check out the team devoted to creating Earth
                                         right.
